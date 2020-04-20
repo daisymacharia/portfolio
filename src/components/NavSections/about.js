@@ -1,9 +1,12 @@
 import React from "react"
 
-const About = () => (
+const About = ({ data }) => (
     <main id="about">
-        <h1>About the Author</h1>
-        <p>Welcome to my Gatsby site.</p>
+        {data.map(job => <div>
+            <h1>{job.node.frontmatter.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: job.node.html }} />
+        </div>
+        )}
     </main>
 )
 

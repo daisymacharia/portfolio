@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <About />
+    <About data={data.about.edges} />
     <Jobs data={data.jobs.edges} />
     <Experience />
     <Contact />
@@ -24,8 +24,21 @@ export default IndexPage
 
 export const pageQuery = graphql`
 {
-  jobs: 
-  allMarkdownRemark {
+  about: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/about/"}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          skills
+          characteristics
+          subTitle
+        }
+        html
+      }
+    }
+  },
+
+  jobs: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/jobs/"}}, sort: {fields: frontmatter___date, order: DESC}) {
     edges {
       node {
         frontmatter {
