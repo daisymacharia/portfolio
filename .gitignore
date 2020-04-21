@@ -1,5 +1,7 @@
+# Project dependencies
 .cache
 node_modules
 
-/public
+# Build directory
+public
 .DS_Store

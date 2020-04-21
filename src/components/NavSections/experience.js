@@ -1,9 +1,16 @@
 import React from "react"
 
-const Experience = () => (
+const Experience = ({ data }) => (
     <main id="projects">
-        <h1>About the Author</h1>
-        <p>Welcome to my Gatsby site.</p>
+        {data.map(project => <div>
+            <h1>{project.node.frontmatter.title}</h1>
+            <a href={project.node.frontmatter.github}>github</a>
+            <a href={project.node.frontmatter.external}> External Link</a>
+            <div dangerouslySetInnerHTML={{ __html: project.node.html }} />
+            {project.node.frontmatter.tech.map(skill => <div> {skill}</div>)}
+        </div>
+
+        )}
     </main>
 )
 

@@ -15,8 +15,8 @@ const IndexPage = ({ data }) => (
     </div>
     <About data={data.about.edges} />
     <Jobs data={data.jobs.edges} />
-    <Experience />
-    <Contact />
+    <Experience data={data.projects.edges} />
+    <Contact data={data.contact.edges} />
   </Layout>
 )
 
@@ -50,6 +50,32 @@ export const pageQuery = graphql`
           url
         }
         html
+      }
+    }
+  },
+
+  projects: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/experience/"}}, sort: {fields: frontmatter___date, order: DESC}) {
+    edges {
+      node {
+        frontmatter {
+          tech
+          github
+          title
+          external
+          date
+        }
+        html
+      }
+    }
+  },
+  contact: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/contact/"}}) {
+    edges {
+      node {
+        html
+        frontmatter {
+          button
+          title
+        }
       }
     }
   }

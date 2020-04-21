@@ -2,7 +2,7 @@
 date: '2018-12-15'
 title: 'FrontEnd Web Developer'
 company: 'The Lions'
-location: 'Nairobi, Kenya'
+location: 'SF, CA'
 range: 'December 2018 - March 2020'
 url: 'https://thelions.com/'
 ---
