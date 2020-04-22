@@ -1,128 +1,13 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import styled from 'styled-components'
-import Img from "gatsby-image"
 
-const StyledContainer = styled.section` 
-    display: flex;
-    justify-content: space-between;
-    margin: 0 15%;
-    padding-top: 50px;
-
-
-`
-
-const StyledAvartar = styled.a`
-    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
-    width: 100%;
-    /* position: relative; */
-    background-color: rgb(100, 255, 218);
-    margin-left: -20px;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    border-radius: 3px;
-    cursor: pointer;
-
-    ::before {
-        content: "";
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        /* background-color: rgb(10, 25, 47); */
-        mix-blend-mode: screen;
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 3px;
-        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    }
-
-    ::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 3px;
-        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-        top: 40px;
-        left: 20px;
-        z-index: -1;
-        border-width: 2px;
-        border-style: solid;
-        border-color: #aeb1b0;
-        border-image: initial;
-    }
-
-`
-
-const StyledImg = styled(Img)`
-    width: 300px;
-    filter: grayscale(100%) contrast(1);
-    border-radius: 3px;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    
-`
-
-const StyledContent = styled.div` 
-    width: 60%;
-    max-width: 530px;
-
-    a {
-        text-decoration: none;
-        color: #7782a0;
-    }
-`
-
-const StyledPic = styled.div` 
-    position: relative;
-    width: 40%;
-    max-width: 300px;
-    margin-left: 60px;
-    height: 370px;
-`
-
-const SkillsContainer = styled.ul` 
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    padding: 20px;
-    margin: 0;
-    /* list-style: none; */
-`
-
-const About = ({ data }) => {
-    const image = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "self.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300){
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-    return (
-        <StyledContainer id="about">
-            {data.map(detail => <StyledContent>
-                <h1>{detail.node.frontmatter.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: detail.node.html }} />
-                <SkillsContainer>
-                    {detail.node.frontmatter.skills.map(skill => (
-                        <li>{skill}</li>
-                    ))}
-                </SkillsContainer>
-            </StyledContent>
-            )}
-            <StyledPic>
-                <StyledAvartar href="https://github.com/daisymacharia" target="_blank">
-                    <StyledImg fluid={image.placeholderImage.childImageSharp.fluid} />
-                </StyledAvartar>
-            </StyledPic>
-        </StyledContainer>
-    )
-}
+const About = ({ data }) => (
+    <main id="about">
+        {data.map(job => <div>
+            <h1>{job.node.frontmatter.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: job.node.html }} />
+        </div>
+        )}
+    </main>
+)
 
 export default About;
