@@ -1,7 +1,7 @@
 import React from "react"
 
 const Experience = ({ data }) => (
-    <main id="projects">
+    <section id="projects">
         {data.map(project => <div>
             <h1>{project.node.frontmatter.title}</h1>
             <a href={project.node.frontmatter.github}>github</a>
@@ -11,7 +11,7 @@ const Experience = ({ data }) => (
         </div>
 
         )}
-    </main>
+    </section>
 )
 
 export default Experience;
