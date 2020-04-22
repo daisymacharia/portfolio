@@ -2,7 +2,7 @@
 date: '2020-04-10'
 title: 'Personal Profile'
 github: 'https://github.com/daisymacharia/portfolio'
-external: 'https://daisymacharia.netlify.app/'
+external: 'https://play.google.com/store/apps/details?id=com.hubtiger.hubtiger'
 tech:
   - React
   - Gatsby
