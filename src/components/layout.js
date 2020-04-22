@@ -8,8 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from 'styled-components';
 
-import { Header, Nav } from "./"
+import { Head, Nav } from "./"
 import "./layout.css"
 
 if (typeof window !== 'undefined') {
@@ -17,6 +18,15 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
 }
 
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+`
+const StyledContent = styled.main` 
+
+`
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -29,24 +39,24 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Nav></Nav>
-      <div
+    <StyledPage>
+      <Head siteTitle={data.site.siteMetadata.title} />
+      <Nav />
+      {/* <div
         style={{
           margin: `0 auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
         }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+      > */}
+      <StyledContent>{children}</StyledContent>
+      <footer>
+        © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+      {/* </div> */}
+    </StyledPage>
   )
 }
 

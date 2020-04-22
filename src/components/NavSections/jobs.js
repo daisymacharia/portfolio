@@ -4,7 +4,7 @@ const Jobs = ({ data }) => {
     console.log(data);
 
     return (
-        <main id="jobs">
+        <section id="jobs">
             {data.map(job => <div>
                 <h1>{job.node.frontmatter.title}</h1>
                 <h1>{job.node.frontmatter.range}</h1>
@@ -14,7 +14,7 @@ const Jobs = ({ data }) => {
             </div>
 
             )}
-        </main>
+        </section>
     )
 }
 export default Jobs;
