@@ -1,5 +1,5 @@
 ---
-title: 'Lets connect'
+title: 'Get In Touch'
 button: 'Say Hello'
 ---
 

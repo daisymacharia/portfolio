@@ -58,6 +58,13 @@ export const pageQuery = graphql`
           title
           external
           date
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
         }
         html
       }

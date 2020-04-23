@@ -3,6 +3,7 @@ date: '2019-03-01'
 title: 'Hubtiger'
 github: ''
 external: 'https://play.google.com/store/apps/details?id=com.hubtiger.hubtiger'
+cover: './hubTiger.png'
 tech:
   - React Native
   - Redux
