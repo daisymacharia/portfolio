@@ -50,10 +50,9 @@ const Layout = ({ children }) => {
         }}
       > */}
       <StyledContent>{children}</StyledContent>
-      <footer>
-        © {new Date().getFullYear()}, Built with
+      <footer style={{ display: 'flex', justifyContent: 'center', margin: '50px' }}>
+        © {new Date().getFullYear()}, Built by Daisy Macharia
           {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
       {/* </div> */}
     </StyledPage>

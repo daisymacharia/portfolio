@@ -12,7 +12,7 @@ import styled from 'styled-components'
  */
 const StyledHero = styled.section`
     width: 100%;
-    background: url('https://res.cloudinary.com/daisymacharia/image/upload/v1587567325/backgroung.jpg');
+    background: url('https://res.cloudinary.com/daisymacharia/image/upload/v1587567325/backgroung.jpg'); /* Photo by Kevin McCutcheon on Unsplash */
     height: 500px;
     padding-top: 150px;
     background-position: 1px;
@@ -47,8 +47,6 @@ const NameComponent = styled.div`
             display: inline-block;
             height: 2px;
             margin: 0 10px;
-            /* position: absolute; */
-            /* top: 50%; */
             margin-bottom: 10px;
             width: 80px;
             zoom: 1;
@@ -60,8 +58,6 @@ const NameComponent = styled.div`
             display: inline-block;
             height: 2px;
             margin: 0 10px;
-            /* position: absolute; */
-            /* top: 50%; */
             margin-bottom: 10px;
             width: 80px;
             zoom: 1;
@@ -84,4 +80,3 @@ const Hero = () => {
 export default Hero
 
 
-// Photo by Kevin McCutcheon on Unsplash

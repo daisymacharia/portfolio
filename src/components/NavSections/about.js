@@ -6,10 +6,8 @@ import Img from "gatsby-image"
 const StyledContainer = styled.section` 
     display: flex;
     justify-content: space-between;
-    margin: 0 15%;
+    margin: 0 20%;
     padding-top: 50px;
-
-
 `
 
 const StyledAvartar = styled.a`
