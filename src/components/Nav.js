@@ -21,7 +21,7 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     color: rgb(204, 214, 246);
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
     z-index: 12;
@@ -50,8 +50,9 @@ const StyledLink = styled(Link)`
 
 const Nav = () => (
     <StyledContainer>
+        <div></div>
         <StyledNav>
-            <div></div>
+
             <StyledList>
                 {navLinks.map(({ url, name }, i) => (
                     <StyledListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>

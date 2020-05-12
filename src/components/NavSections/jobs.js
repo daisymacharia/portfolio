@@ -4,6 +4,11 @@ import styled from 'styled-components'
 const StyledContainer = styled.section` 
     margin: 0 20%;
     padding-top: 50px;
+
+    @media (max-width: 768px) {
+        margin: 0;
+        padding: 100px 0;
+    }
 `
 
 const StyledContent = styled.div` 

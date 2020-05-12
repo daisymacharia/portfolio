@@ -9,6 +9,11 @@ const StyledContainer = styled.section`
     padding-top: 100px;
     align-items: center;
 
+    @media (max-width: 768px) {
+        margin: 0;
+        padding: 100px 0;
+    }
+
     h1 {
         ::before {
             content: " ";
@@ -19,6 +24,11 @@ const StyledContainer = styled.section`
             width: 80px;
             zoom: 1;
             background-color: #223242;
+
+            @media (max-width: 768px) {
+                margin-bottom: 5px;
+                width: 25px;
+            }
         }
 
         ::after {
@@ -30,6 +40,11 @@ const StyledContainer = styled.section`
             width: 80px;
             zoom: 1;
             background-color: #223242;
+
+            @media (max-width: 768px) {
+                margin-bottom: 5px;
+                width: 25px;
+            }
         }
     }
 

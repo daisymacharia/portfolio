@@ -8,6 +8,13 @@ const StyledContainer = styled.section`
     justify-content: space-between;
     margin: 0 20%;
     padding-top: 50px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin: 0;
+        padding: 100px 0px;
+    }
+    
 `
 
 const StyledAvartar = styled.a`
@@ -15,10 +22,10 @@ const StyledAvartar = styled.a`
     width: 100%;
     /* position: relative; */
     background-color: rgb(100, 255, 218);
-    margin-left: -20px;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     border-radius: 3px;
     cursor: pointer;
+    position: absolute;
 
     ::before {
         content: "";
@@ -44,7 +51,7 @@ const StyledAvartar = styled.a`
         height: 100%;
         border-radius: 3px;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-        top: 40px;
+        top: 20px;
         left: 20px;
         z-index: -1;
         border-width: 2px;
@@ -56,11 +63,9 @@ const StyledAvartar = styled.a`
 `
 
 const StyledImg = styled(Img)`
-    width: 300px;
     filter: grayscale(100%) contrast(1);
     border-radius: 3px;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s; 
 `
 
 const StyledContent = styled.div` 
@@ -71,14 +76,23 @@ const StyledContent = styled.div`
         text-decoration: none;
         color: #7782a0;
     }
+
+    @media (max-width: 768px) {
+        width: unset;
+        margin: auto;
+    }
 `
 
 const StyledPic = styled.div` 
     position: relative;
     width: 40%;
     max-width: 300px;
-    margin-left: 60px;
-    height: 370px;
+
+    @media (max-width: 768px) {
+        width: 70%;
+        min-height: 200px;
+        margin: 25px auto 0;
+    }
 `
 
 const SkillsContainer = styled.ul` 

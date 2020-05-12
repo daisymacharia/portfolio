@@ -25,8 +25,6 @@ export const pageQuery = graphql`
         frontmatter {
           title
           skills
-          characteristics
-          subTitle
         }
         html
       }

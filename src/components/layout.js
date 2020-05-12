@@ -23,9 +23,13 @@ const StyledPage = styled.div`
   flex-direction: column;
   min-height: 100vh;
 
+  
+
 `
 const StyledContent = styled.main` 
-
+  @media (max-width: 768px) {
+      padding: 0 25px;
+  }
 `
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

@@ -7,10 +7,8 @@ skills:
   - Redux
   - Node.js
   - MobX
-subTitle: 'My System'
-characteristics:
-  - Be passionately curoius
-  - Believe in change
+  - Gatsby
+  - Puppeteer
 ---
 
 Hello! I'm Daisy Macharia, a Kenyan-bred software engineer.

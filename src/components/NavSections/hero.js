@@ -14,12 +14,15 @@ const StyledHero = styled.section`
     width: 100%;
     background: url('https://res.cloudinary.com/daisymacharia/image/upload/v1587567325/backgroung.jpg'); /* Photo by Kevin McCutcheon on Unsplash */
     height: 500px;
-    padding-top: 150px;
     background-position: 1px;
     background-attachment: fixed;
     background-size: 100%;
-    padding-top: 250px;
-    padding-bottom: 100px;
+    padding: 250px 0 100px 0;
+    
+    @media (max-width: 768px) {
+        height: 300px;
+        padding: 150px 0 0 0;
+    }
 
 `
 
