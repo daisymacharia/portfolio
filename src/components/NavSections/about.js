@@ -6,8 +6,9 @@ import Img from "gatsby-image"
 const StyledContainer = styled.section` 
     display: flex;
     justify-content: space-between;
-    margin: 0 20%;
+    /* margin: 0 20%; */
     padding-top: 50px;
+    width: 50%;
 
     @media (max-width: 768px) {
         flex-direction: column;
@@ -69,8 +70,8 @@ const StyledImg = styled(Img)`
 `
 
 const StyledContent = styled.div` 
-    width: 60%;
-    max-width: 530px;
+    /* width: 60%; */
+    /* max-width: 530px; */
 
     a {
         text-decoration: none;
@@ -119,20 +120,20 @@ const About = ({ data }) => {
     return (
         <StyledContainer id="about">
             {data.map(detail => <StyledContent>
-                <h1>{detail.node.frontmatter.title}</h1>
+                {/* <h1>{detail.node.frontmatter.title}</h1> */}
                 <div dangerouslySetInnerHTML={{ __html: detail.node.html }} />
-                <SkillsContainer>
+                {/* <SkillsContainer>
                     {detail.node.frontmatter.skills.map(skill => (
                         <li>{skill}</li>
                     ))}
-                </SkillsContainer>
+                </SkillsContainer> */}
             </StyledContent>
             )}
-            <StyledPic>
+            {/* <StyledPic>
                 <StyledAvartar href="https://github.com/daisymacharia" target="_blank">
                     <StyledImg fluid={image.placeholderImage.childImageSharp.fluid} />
                 </StyledAvartar>
-            </StyledPic>
+            </StyledPic> */}
         </StyledContainer>
     )
 }

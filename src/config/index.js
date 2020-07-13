@@ -6,20 +6,20 @@ module.exports = {
         'Daisy Macharia, Daisy, javascript, software engineer, front-end engineer, web developer',
 
     navLinks: [
-        {
-            name: 'About',
-            url: '#about',
-        },
+        // {
+        //     name: 'About',
+        //     url: '#about',
+        // },
         {
             name: 'Experience',
             url: '#jobs',
         },
         {
-            name: 'My Work',
+            name: 'Projects',
             url: '#projects',
         },
         {
-            name: 'Contact',
+            name: 'My Digital Garden',
             url: '#contact',
         },
     ],

@@ -1,17 +1,38 @@
 import React from "react"
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import { Layout, About, Jobs, Experience, Contact, HeroImage } from "@components"
+import { Layout, About, Jobs, Experience, Contact, HeroImage, Nav } from "@components"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+const StaticArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/2;
+  position: fixed;
+  padding: 5rem 0 5rem 2rem;
+  width: 100%;
+`
+
+const ScrollableArea = styled.div`
+   grid-column: 2;
+   padding: 5rem 2rem;
+`
+
 const IndexPage = ({ data }) => (
   <Layout>
-    <HeroImage />
-    <About data={data.about.edges} />
-    <Jobs data={data.jobs.edges} />
-    <Experience data={data.projects.edges} />
-    <Contact data={data.contact.edges} />
+    <StaticArea>
+      <HeroImage />
+      <About data={data.about.edges} />
+      <Nav />
+    </StaticArea>
+    <ScrollableArea>
+      <Jobs data={data.jobs.edges} />
+      <Experience data={data.projects.edges} />
+      <Contact data={data.contact.edges} />
+    </ScrollableArea>
+
   </Layout>
 )
 

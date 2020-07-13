@@ -21,12 +21,16 @@ if (typeof window !== 'undefined') {
 const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-
+  height: 100vh;
+  width: 100vw;
   
-
 `
 const StyledContent = styled.main` 
+  display:grid;
+  grid-auto-columns:1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 4rem;
+
   @media (max-width: 768px) {
       padding: 0 25px;
   }
@@ -45,7 +49,7 @@ const Layout = ({ children }) => {
   return (
     <StyledPage>
       <Head siteTitle={data.site.siteMetadata.title} />
-      <Nav />
+      {/* <Nav /> */}
       {/* <div
         style={{
           margin: `0 auto`,

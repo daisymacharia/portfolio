@@ -3,17 +3,18 @@ import { navLinks } from '@config';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-const StyledContainer = styled.header`
+const StyledContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    z-index: 11;
-    width: 100%;
+    /* align-items: center; */
+    /* position: fixed; */
+    /* z-index: 11; */
+    /* width: 100%; */
     background-color: #fff;
-    height: 100px;
-    padding: 0 18px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    /* height: 100px; */
+    /* padding: 0 18px; */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,.4); */
 `
 
 const StyledNav = styled.nav`
@@ -29,13 +30,13 @@ const StyledNav = styled.nav`
 `
 
 const StyledList = styled.ul`
-    display: flex;
+    /* display: flex;
     padding: 0;
     list-style: none;
     float: right;
     margin: 0;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
     
 `
 const StyledListItem = styled.li`
@@ -50,7 +51,7 @@ const StyledLink = styled(Link)`
 
 const Nav = () => (
     <StyledContainer>
-        <div></div>
+        {/* <div></div> */}
         <StyledNav>
 
             <StyledList>
