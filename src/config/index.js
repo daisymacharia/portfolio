@@ -13,14 +13,17 @@ module.exports = {
         {
             name: 'Experience',
             url: '#jobs',
+            page: '01'
         },
         {
             name: 'Projects',
             url: '#projects',
+            page: '02'
         },
         {
             name: 'My Digital Garden',
             url: '#contact',
+            page: '03'
         },
     ],
 

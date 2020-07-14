@@ -7,17 +7,23 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 const StaticArea = styled.div`
-  display: flex;
-  flex-direction: column;
-  grid-column: 1/2;
-  position: fixed;
-  padding: 5rem 0 5rem 2rem;
-  width: 100%;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    position: fixed;
+    width: 50%;
+  }
+  position: relative;
+  padding: 0;
+  
 `
 
 const ScrollableArea = styled.div`
-   grid-column: 2;
-   padding: 5rem 2rem;
+  @media (min-width: 768px) {
+    position: relative;
+    grid-column: 2;
+  }
 `
 
 const IndexPage = ({ data }) => (
@@ -26,11 +32,12 @@ const IndexPage = ({ data }) => (
       <HeroImage />
       <About data={data.about.edges} />
       <Nav />
+      <Contact data={data.contact.edges} />
     </StaticArea>
     <ScrollableArea>
       <Jobs data={data.jobs.edges} />
       <Experience data={data.projects.edges} />
-      <Contact data={data.contact.edges} />
+
     </ScrollableArea>
 
   </Layout>

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { Icon } from '@components/icons';
 
 const StyledContainer = styled.section`  
-    margin: 0 20%;
+    /* margin: 0 20%; */
     padding-top: 50px;
 
     @media (max-width: 768px) {
@@ -83,7 +83,15 @@ const StyledLinkWrapper = styled.div`
 `;
 
 const StyledProject = styled.div` 
-    display: grid;
+
+    height: 10rem;
+    width: 100%;
+    background-color:  rgb(40, 44, 52,1);
+    color: whitesmoke;
+    margin-bottom: 2rem;
+    overflow: hidden; /*remove after */
+
+    /* display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
@@ -109,11 +117,11 @@ const StyledProject = styled.div`
             justify-content: flex-end;
         }
         
-    }
+    } */
 `
 
 const StyledDescription = styled.div` 
-    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+    /* box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
     position: relative;
     z-index: 2;
     background-color: rgb(23, 42, 69);
@@ -126,7 +134,7 @@ const StyledDescription = styled.div`
     a {
         text-decoration: none;
         color: #f5f5f5;
-    }
+    } */
 `
 
 const Experience = ({ data }) => {
@@ -135,11 +143,11 @@ const Experience = ({ data }) => {
     return (
         <StyledContainer id="projects">
             <h1>Some things I have bulit</h1>
-            {data.map(project => <StyledProject>
+            {data.map(project => <StyledProject key={project.node.frontmatter.title}>
                 <StyledContent>
                     <h1>{project.node.frontmatter.title}</h1>
                     <StyledDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                    <StyledTech>{project.node.frontmatter.tech.map(skill => <li> {skill}</li>)}</StyledTech>
+                    <StyledTech>{project.node.frontmatter.tech.map(skill => <li key={skill}> {skill}</li>)}</StyledTech>
                     <StyledLinkWrapper>
                         {project.node.frontmatter.github && <a href={project.node.frontmatter.github}><Icon name="GitHub" /></a>}
                         {project.node.frontmatter.external && <a href={project.node.frontmatter.external}> <Icon name="External" /></a>}

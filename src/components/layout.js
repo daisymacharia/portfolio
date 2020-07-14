@@ -22,18 +22,34 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
-  
+  padding: 5rem 2rem;
+
+  .fixed-top {
+    width: 100%;
+    top: 0;
+    height: 2rem;
+    position: fixed;
+    background: linear-gradient(0deg,rgba(21,21,21,0),#151515);
+  }
+  .fixed-bottom {
+    width: 100%;
+    height: 2rem;
+    bottom: 0;
+    position: fixed;
+    background: linear-gradient(180deg,rgba(21,21,21,0),#151515);
+  }
 `
 const StyledContent = styled.main` 
-  display:grid;
-  grid-auto-columns:1fr 1fr;
-  grid-auto-rows: 1fr;
-  grid-gap: 4rem;
 
-  @media (max-width: 768px) {
-      padding: 0 25px;
+  @media (min-width: 768px) {
+    display:grid;
+    grid-auto-columns:1fr 1fr;
+    grid-auto-rows: 1fr;
+    grid-gap: 4rem;
   }
+
+  display:grid;
+  grid-auto-columns:1fr;
 `
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -48,6 +64,7 @@ const Layout = ({ children }) => {
 
   return (
     <StyledPage>
+      <div className='fixed-top' />
       <Head siteTitle={data.site.siteMetadata.title} />
       {/* <Nav /> */}
       {/* <div
@@ -62,6 +79,7 @@ const Layout = ({ children }) => {
         © {new Date().getFullYear()}, Built by Daisy Macharia
           {` `}
       </footer>
+      <div className='fixed-bottom' />
       {/* </div> */}
     </StyledPage>
   )

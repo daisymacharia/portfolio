@@ -7,8 +7,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #070606;
-  color: #FFFFFF;
+  background-color:  #111319;
+  color: #949495;
 }
 article,
 aside,
@@ -193,7 +193,7 @@ html {
 }
 * {
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #949495;
 }
 *:before {
   box-sizing: inherit;
@@ -232,7 +232,7 @@ h1 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;

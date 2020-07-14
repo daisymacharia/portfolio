@@ -14,7 +14,7 @@ const StyledContainer = styled.section`
         padding: 100px 0;
     }
 
-    h1 {
+    /* h1 {
         ::before {
             content: " ";
             display: inline-block;
@@ -45,8 +45,8 @@ const StyledContainer = styled.section`
                 margin-bottom: 5px;
                 width: 25px;
             }
-        }
-    }
+        } */
+    /* } */
 
 
     svg {
@@ -61,9 +61,9 @@ const StyledContainer = styled.section`
 
 const Contact = ({ data }) => (
     <StyledContainer id="contact">
-        <h1>{data[ 0 ].node.frontmatter.title}</h1>
+        {/* <h1>{data[ 0 ].node.frontmatter.title}</h1> */}
 
-        <div dangerouslySetInnerHTML={{ __html: data[ 0 ].node.html }} />
+        {/* <div dangerouslySetInnerHTML={{ __html: data[ 0 ].node.html }} /> */}
         <Icon name="Linkedin" />
     </StyledContainer>
 )
