@@ -22,7 +22,7 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 
   .fixed-top {
     width: 100%;
@@ -75,10 +75,6 @@ const Layout = ({ children }) => {
         }}
       > */}
       <StyledContent>{children}</StyledContent>
-      <footer style={{ display: 'flex', justifyContent: 'center', margin: '50px' }}>
-        © {new Date().getFullYear()}, Built by Daisy Macharia
-          {` `}
-      </footer>
       <div className='fixed-bottom' />
       {/* </div> */}
     </StyledPage>

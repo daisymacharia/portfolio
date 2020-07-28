@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
@@ -8,7 +7,7 @@ const StyledContainer = styled.section`
     @media (min-width: 768px) {
         display: flex;
         justify-content: space-between;
-        padding-top: 50px;
+        padding-top: 1rem;
     }
     
 `
@@ -25,17 +24,7 @@ const StyledContent = styled.div`
 `
 
 const About = ({ data }) => {
-    const image = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "self.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300){
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+
 
     return (
         <StyledContainer id="about">

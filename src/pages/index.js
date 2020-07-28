@@ -8,14 +8,22 @@ import SEO from "../components/seo"
 
 const StaticArea = styled.div`
   @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    grid-gap: 1rem;
     grid-column: 1/2;
     position: fixed;
-    width: 50%;
+    width: calc(50% - 5rem);
+    height: 100%;
   }
+
   position: relative;
   padding: 0;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
   
 `
 
@@ -29,15 +37,20 @@ const ScrollableArea = styled.div`
 const IndexPage = ({ data }) => (
   <Layout>
     <StaticArea>
-      <HeroImage />
-      <About data={data.about.edges} />
-      <Nav />
       <Contact data={data.contact.edges} />
+      <div className="main">
+        <HeroImage />
+        <About data={data.about.edges} />
+        <Nav />
+      </div>
     </StaticArea>
     <ScrollableArea>
       <Jobs data={data.jobs.edges} />
       <Experience data={data.projects.edges} />
-
+      <footer style={{ display: 'flex', justifyContent: 'center', margin: '50px' }}>
+        © {new Date().getFullYear()}, Built by Daisy Macharia
+          {` `}
+      </footer>
     </ScrollableArea>
 
   </Layout>
