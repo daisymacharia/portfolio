@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { navLinks } from '@config';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import Menu from './menu';
-// const StyledHamburger = styled.div` 
+import React, { useEffect, useState } from "react";
+import { navLinks } from "@config";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import Menu from "./menu";
+// const StyledHamburger = styled.div`
 //     @media (max-width: 48em) {
 //         display: flex;
 //         position: absolute;
@@ -13,15 +13,14 @@ import Menu from './menu';
 
 // `
 
-// const StyledHamburgerBox = styled.div` 
+// const StyledHamburgerBox = styled.div`
 //     position: relative;
 //     display: inline-block;
 //     width: 30px;
 //     height: 24px;
 // `
 
-
-// const StyledHamburgerInner = styled.div` 
+// const StyledHamburgerInner = styled.div`
 //     background-color: #FFFFFF;
 //     position: absolute;
 //     width: 30px;
@@ -67,26 +66,25 @@ import Menu from './menu';
 // `
 
 const StyledHamburger = styled.div`
-    overflow: visible;
-    margin: 0 -12px 0 0;
-    padding: 15px;
-    cursor: pointer;
-    transition-timing-function: linear;
-    transition-duration: 0.15s;
-    transition-property: opacity, filter;
-    text-transform: none;
-    color: inherit;
-    border: 0;
-    background-color: transparent;
-    display: none;
-    top: 0;
-    position: absolute;
-    right: 0;
-    z-index: 11;
-    @media (max-width: 48em) {
-        display: flex;
-    }
-
+  overflow: visible;
+  margin: 0 -12px 0 0;
+  padding: 15px;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  display: none;
+  top: 0;
+  position: absolute;
+  right: 0;
+  z-index: 11;
+  @media (max-width: 48em) {
+    display: flex;
+  }
 `;
 const StyledHamburgerBox = styled.div`
   position: relative;
@@ -95,7 +93,7 @@ const StyledHamburgerBox = styled.div`
   height: 24px;
 `;
 const StyledHamburgerInner = styled.div`
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: absolute;
   width: 30px;
   height: 2px;
@@ -105,16 +103,17 @@ const StyledHamburgerInner = styled.div`
   right: 0;
   transition-duration: 0.22s;
   transition-property: transform;
-  transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
-  transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
+  transition-delay: ${(props) => (props.menuOpen ? `0.12s` : `0s`)};
+  transform: rotate(${(props) => (props.menuOpen ? `225deg` : `0deg`)});
   transition-timing-function: cubic-bezier(
-    ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
+    ${(props) =>
+      props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`}
   );
   &:before,
   &:after {
-    content: '';
+    content: "";
     display: block;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     position: absolute;
     left: auto;
     right: 0;
@@ -126,135 +125,138 @@ const StyledHamburgerInner = styled.div`
     border-radius: 4px;
   }
   &:before {
-    width: ${props => (props.menuOpen ? `100%` : `120%`)};
-    top: ${props => (props.menuOpen ? `0` : `-10px`)};
-    opacity: ${props => (props.menuOpen ? 0 : 1)};
-    transition: ${props => (props.menuOpen ? `top 0.1s ease-in 0.25s, opacity 0.1s ease-in 0s` : `top 0.1s ease-out 0s, opacity 0.1s ease-out 0.12s`)};
+    width: ${(props) => (props.menuOpen ? `100%` : `120%`)};
+    top: ${(props) => (props.menuOpen ? `0` : `-10px`)};
+    opacity: ${(props) => (props.menuOpen ? 0 : 1)};
+    transition: ${(props) =>
+      props.menuOpen
+        ? `top 0.1s ease-in 0.25s, opacity 0.1s ease-in 0s`
+        : `top 0.1s ease-out 0s, opacity 0.1s ease-out 0.12s`};
   }
   &:after {
-    width: ${props => (props.menuOpen ? `100%` : `80%`)};
-    bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
-    transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-    transition: ${props => (props.menuOpen ? `bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s` : `bottom 0.1s ease-out 0s, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s`)};
+    width: ${(props) => (props.menuOpen ? `100%` : `80%`)};
+    bottom: ${(props) => (props.menuOpen ? `0` : `-10px`)};
+    transform: rotate(${(props) => (props.menuOpen ? `-90deg` : `0`)});
+    transition: ${(props) =>
+      props.menuOpen
+        ? `bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s`
+        : `bottom 0.1s ease-out 0s, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s`};
   }
 `;
 
 const MobileNav = ({ toggleMenu, menuOpen }) => {
-    return (
-        <StyledHamburger onClick={toggleMenu}>
-            <StyledHamburgerBox>
-                <StyledHamburgerInner menuOpen={menuOpen} />
-            </StyledHamburgerBox>
-        </StyledHamburger>
-    )
-}
+  return (
+    <StyledHamburger onClick={toggleMenu}>
+      <StyledHamburgerBox>
+        <StyledHamburgerInner menuOpen={menuOpen} />
+      </StyledHamburgerBox>
+    </StyledHamburger>
+  );
+};
 
 const StyledContainer = styled.div`
-    @media (min-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-    }
-    @media (max-width: 767px) {
-        display: none;
-    }
-`
-
-const StyledList = styled.ul`
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    font-size: 0.9rem;
+    justify-content: space-between;
+    position: relative;
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
 
-
-`
+const StyledList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-size: 0.9rem;
+`;
 const StyledListItem = styled.li`
-    margin: 0;
-    list-style: none;
-    padding: 0.5rem 0;
-`
+  margin: 0;
+  list-style: none;
+  padding: 0.5rem 0;
+`;
 const StyledLink = styled(Link)`
-    display: inline-flex;
-    text-decoration: none;
-    align-items: center;
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
 
+  .divider {
+    width: ${(props) => (props.active ? "3rem" : "2rem")};
+    height: 0.05rem;
+    background: ${(props) => (props.active ? "white" : "#949495")};
+    margin: 0 1rem;
+  }
+
+  &:hover {
     .divider {
-        width: ${props => props.active ? '3rem' : '2rem'};
-        height: 0.05rem;
-        background: ${props => props.active ? 'white' : '#949495'}; 
-        margin: 0 1rem;
+      width: 3rem;
+      background: white;
+      transition: all 0.2s ease-in-out;
     }
-
-    &:hover {
-        .divider{
-            width: 3rem;
-            background: white;
-            transition: all .2s ease-in-out;
-        }
-        .page-number{
-            color: #fff;
-        }
-        
+    .page-number {
+      color: #fff;
     }
-`
+  }
+`;
 
 const Nav = () => {
-    const [ open, setMenu ] = useState('false')
+  const [open, setMenu] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener('resize', () => handleResize());
-        window.addEventListener('keydown', e => handleKeydown(e));
+  useEffect(() => {
+    window.addEventListener("resize", () => handleResize());
+    window.addEventListener("keydown", (e) => handleKeydown(e));
 
-        return (() => {
-            window.removeEventListener('resize', () => handleResize());
-            window.removeEventListener('keydown', e => handleKeydown(e));
+    return () => {
+      window.removeEventListener("resize", () => handleResize());
+      window.removeEventListener("keydown", (e) => handleKeydown(e));
+    };
+  });
 
-        });
-    });
+  const toggleMenu = () => setMenu(!open);
 
-    const toggleMenu = () => setMenu(!open);
+  const isActive = (path) => {
+    return window.location.pathname.includes(path);
+  };
 
+  const handleResize = () => {
+    if (window.innerWidth > 768 && open) {
+      toggleMenu();
+    }
+  };
 
-    const isActive = (path) => {
-
-        return window.location.pathname.includes(path)
+  const handleKeydown = (e) => {
+    if (!open) {
+      return;
     }
 
-    const handleResize = () => {
-        if (window.innerWidth > 768 && open) {
-            toggleMenu();
-        }
-    };
+    if (e.which === 27 || e.key === "Escape") {
+      toggleMenu();
+    }
+  };
 
-    const handleKeydown = e => {
-        if (!open) {
-            return;
-        }
-
-        if (e.which === 27 || e.key === 'Escape') {
-            toggleMenu();
-        }
-    };
-
-    return (
-        <>
-            <MobileNav toggleMenu={toggleMenu} menuOpen={open} />
-            <StyledContainer>
-                <StyledList>
-                    {navLinks.map(({ url, page, name }, index) => (
-                        <StyledListItem key={index} style={{ transitionDelay: `${index * 100}ms` }}>
-                            <StyledLink to={url} >
-                                <span className='page-number'>{page}</span>
-                                <span className='divider' />
-                                <span>{name}</span>
-                            </StyledLink>
-                        </StyledListItem>
-                    ))}
-                </StyledList>
-            </StyledContainer>
-            <Menu toggleMenu={toggleMenu} menuOpen={open} />
-        </>
-    )
-}
-export default Nav
+  return (
+    <>
+      <MobileNav toggleMenu={toggleMenu} menuOpen={open} />
+      <StyledContainer>
+        <StyledList>
+          {navLinks.map(({ url, page, name }, index) => (
+            <StyledListItem
+              key={index}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <StyledLink to={url}>
+                <span className="page-number">{page}</span>
+                <span className="divider" />
+                <span>{name}</span>
+              </StyledLink>
+            </StyledListItem>
+          ))}
+        </StyledList>
+      </StyledContainer>
+      <Menu toggleMenu={toggleMenu} menuOpen={open} />
+    </>
+  );
+};
+export default Nav;
