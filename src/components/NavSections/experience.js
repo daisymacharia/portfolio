@@ -6,6 +6,10 @@ import { Icon } from "@components/icons";
 const StyledContainer = styled.section`
   padding-top: 50px;
 
+  h1 {
+    margin-bottom: 3rem;
+  }
+
   @media (max-width: 768px) {
     margin: 0;
     padding: 100px 0;
@@ -78,17 +82,29 @@ const StyledLinkWrapper = styled.div`
 `;
 
 const StyledProjectsContainer = styled.div`
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+  }
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
 `;
 
 const StyledProject = styled.div`
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  /* align-items: center; */
-  /* height: 20rem; */
-  background-color: rgb(40, 44, 52, 1);
+  grid-template-columns: 1fr;
+  background-color: #202124;
+
+  @media (max-width: 768px) {
+    grid-template-rows: minmax(15rem, 20rem);
+  }
+
+  &:nth-of-type(odd) {
+    @media (min-width: 768px) {
+      transform: translateY(-30px);
+    }
+  }
 
   &:hover {
     transform: scale(1.1);
