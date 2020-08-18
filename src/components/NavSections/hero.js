@@ -1,5 +1,5 @@
-import React from "react"
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -11,26 +11,26 @@ import styled from 'styled-components'
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 const StyledHero = styled.section`
-    @media (min-width: 768px) {
-        background-position: 1px;
-        background-attachment: fixed;
-        background-size: 100%;
-    }
+  margin-top: 40px;
 
-`
-const NameContainer = styled.h1` 
-    font-size: 4rem;
-`
+  @media (min-width: 768px) {
+    background-position: 1px;
+    background-attachment: fixed;
+    background-size: 100%;
+    margin-top: 0;
+  }
+`;
+const NameContainer = styled.h1`
+  /* font-size: 4rem; */
+`;
 
 const Hero = () => {
-
-    return <StyledHero>
-        <NameContainer>
-            Hello, I'm <br></br>Daisy Macharia
-        </NameContainer>
-
+  return (
+    <StyledHero>
+      <NameContainer>
+        Hello, I'm <br></br>Daisy Macharia
+      </NameContainer>
     </StyledHero>
-}
-export default Hero
-
-
+  );
+};
+export default Hero;

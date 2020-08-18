@@ -6,10 +6,15 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const StyledContainer = styled.section`
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   margin: 2rem 0;
   align-items: center;
   justify-content: flex-end;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 
   .divider {
     display: block;
@@ -18,9 +23,11 @@ const StyledContainer = styled.section`
     width: 0.05rem;
     background: #949495;
 
-    @media (max-width: 768px) {
-      margin-bottom: 5px;
-      width: 25px;
+    @media (max-width: 767px) {
+      margin-left: 2rem;
+      width: 0;
+      height: 0;
+      margin-top: 0;
     }
   }
 
@@ -33,9 +40,11 @@ const StyledContainer = styled.section`
     background: #949495;
     zoom: 1;
 
-    @media (max-width: 768px) {
-      margin-bottom: 5px;
-      width: 25px;
+    @media (max-width: 767px) {
+      margin-right: 2rem;
+      width: 0;
+      height: 0;
+      margin-top: 0;
     }
   }
 
@@ -45,6 +54,11 @@ const StyledContainer = styled.section`
     fill: #fff;
     margin-top: 1rem;
     padding: 8px;
+
+    @media (max-width: 767px) {
+      margin-top: 0;
+      margin-left: 2rem;
+    }
 
     &:hover {
       cursor: pointer;
@@ -58,6 +72,10 @@ const ImageContainer = styled.div`
   width: 3rem;
   border-radius: 50%;
   margin-top: 1rem;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 
   &:hover {
     transform: scale(1.1);
