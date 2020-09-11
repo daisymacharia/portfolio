@@ -20,9 +20,7 @@ const StyledContent = styled.div`
   grid-row: 1 / -1;
   grid-column: 1 / -1;
   margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  z-index: 1;
 `;
 
 const StyledImageContainer = styled.div`

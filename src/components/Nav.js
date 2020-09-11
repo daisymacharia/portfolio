@@ -162,7 +162,7 @@ const Nav = () => {
   };
 
   const handleResize = () => {
-    if (window.innerWidth > 768 && open) {
+    if (window.innerWidth > 767 && open) {
       toggleMenu();
     }
   };
