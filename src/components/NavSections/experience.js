@@ -6,13 +6,13 @@ import { Icon } from "@components/icons";
 const StyledContainer = styled.section`
   padding-top: 50px;
 
-  h1 {
-    margin-bottom: 3rem;
+  .title {
+    margin: 0;
+    font-size: 1.5rem;
   }
 
   @media (max-width: 768px) {
     margin: 0;
-    padding: 100px 0;
   }
 `;
 
@@ -38,10 +38,11 @@ const StyledFeaturedImg = styled(Img)`
   border-radius: 3px;
   position: relative;
   opacity: 0.25;
-  mix-blend-mode: soft-light;
+  mix-blend-mode: multiply;
 
   &:hover {
-    mix-blend-mode: hard -light;
+    mix-blend-mode: hard-light;
+    opacity: 0.1;
   }
 `;
 
@@ -51,14 +52,14 @@ const StyledTech = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  margin: 25px 0px 10px;
+  margin: 0;
   list-style: none;
 
   li {
     font-size: 13px;
     color: rgb(136, 146, 176);
     margin-right: 20px;
-    margin-bottom: 7px;
+    margin-bottom: 0;
     white-space: nowrap;
   }
 `;
@@ -86,6 +87,7 @@ const StyledProjectsContainer = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.5rem;
+    margin-top: 3rem;
   }
   display: grid;
   grid-template-columns: 1fr;
@@ -95,6 +97,7 @@ const StyledProjectsContainer = styled.div`
 const StyledProject = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: minmax(200px, 350px);
   background-color: #202124;
 
   @media (max-width: 768px) {
@@ -115,20 +118,10 @@ const StyledProject = styled.div`
 `;
 
 const StyledDescription = styled.div`
-  /* box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
-    position: relative;
-    z-index: 2;
-    background-color: rgb(23, 42, 69);
-    color: rgb(168, 178, 209);
-    font-size: 15px;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    padding: 25px;
-    border-radius: 3px;
-
-    a {
-        text-decoration: none;
-        color: #f5f5f5;
-    } */
+  height: 8rem;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+  overflow: hidden;
 `;
 
 const Experience = ({ data }) => {
@@ -141,7 +134,7 @@ const Experience = ({ data }) => {
         {data.map((project) => (
           <StyledProject key={project.node.frontmatter.title}>
             <StyledContent>
-              <h1>{project.node.frontmatter.title}</h1>
+              <h1 className="title">{project.node.frontmatter.title}</h1>
               <StyledDescription
                 dangerouslySetInnerHTML={{ __html: project.node.html }}
               />

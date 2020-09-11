@@ -25,6 +25,8 @@ const StaticArea = styled.div`
     height: 100%;
   }
 
+  display: flex;
+  flex-direction: column-reverse;
   position: relative;
   padding: 0;
 
@@ -55,7 +57,7 @@ const IndexPage = ({ data }) => (
       <Jobs data={data.jobs.edges} />
       <Experience data={data.projects.edges} />
       <footer
-        style={{ display: "flex", justifyContent: "center", margin: "50px" }}
+        style={{ display: "flex", justifyContent: "center", margin: "50px 0" }}
       >
         © {new Date().getFullYear()}, Built by Daisy Macharia
         {` `}
