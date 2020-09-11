@@ -82,7 +82,8 @@ const StyledHamburger = styled.div`
   position: absolute;
   right: 0;
   z-index: 11;
-  @media (max-width: 48em) {
+
+  @media (max-width: 767px) {
     display: flex;
   }
 `;
@@ -155,13 +156,12 @@ const MobileNav = ({ toggleMenu, menuOpen }) => {
 };
 
 const StyledContainer = styled.div`
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-  }
-  @media (max-width: 767px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -221,7 +221,7 @@ const Nav = () => {
   };
 
   const handleResize = () => {
-    if (window.innerWidth > 768 && open) {
+    if (window.innerWidth > 767 && open) {
       toggleMenu();
     }
   };
