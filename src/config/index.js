@@ -20,11 +20,11 @@ module.exports = {
             url: '#projects',
             page: '02'
         },
-        {
-            name: 'My Digital Garden',
-            url: '#contact',
-            page: '03'
-        },
+        // {
+        //     name: 'My Digital Garden',
+        //     url: '#contact',
+        //     page: '03'
+        // },
     ],
 
 }

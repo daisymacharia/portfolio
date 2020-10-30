@@ -10,7 +10,7 @@ tech:
   - SCSS
 ---
 
-An internal tool for getting to know your co-workers.
+An platform built on react, to allow users to virtually meet their co-workers.
 
 
 

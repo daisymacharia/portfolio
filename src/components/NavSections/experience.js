@@ -125,8 +125,6 @@ const StyledDescription = styled.div`
 `;
 
 const Experience = ({ data }) => {
-  console.log(data);
-
   return (
     <StyledContainer id="projects">
       <h1>Some things I have bulit</h1>

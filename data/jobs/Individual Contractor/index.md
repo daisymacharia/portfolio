@@ -1,10 +1,9 @@
 ---
-date: '2017-05-02'
-title: 'Associate Engineer'
-company: 'Andela'
+date: '2020-10-02'
+title: 'Front End Engineer'
+company: 'Individual Contractor'
 location: 'Nairobi, Kenya'
-range: 'May 2017 - Sept 2020'
-url: 'https://andela.com/'
+range: 'Oct 2020 - present'
 ---
 
 - Andela places software engineers from Africa to work with global tech companies as full-time, distributed team members.
